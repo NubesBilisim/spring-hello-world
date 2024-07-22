@@ -13,7 +13,7 @@ FROM registry.access.redhat.com/ubi8/openjdk-17
 #EXPOSE 8080
 
 ARG JAR_FILE=/home/app/target/spring-hello-world-0.0.1-SNAPSHOT.jar
-COPY --from=build ${JAR_FILE} /deployments/app.jar
+COPY --from=build ${JAR_FILE} /deployments/application.jar
 CMD ["java", "-jar", "/deployments/application.jar", "--spring.config.location=file:///deployments/config/application.properties"]
 #ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 8080
